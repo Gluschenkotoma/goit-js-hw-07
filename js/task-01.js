@@ -1,13 +1,7 @@
-// const categoriesEl = document.querySelector("#categories");
-// const itemEl = document.querySelector(".item");
-// const titleEl = document.querySelector("h2");
-
-// console.log(categoriesEl);
-// console.log(itemEl);
-// console.log(titleEl);
-
-const refs = {
-  categoriesList: document.querySelector("#categories"),
-  itemList: document.querySelector(".item"),
-  title: document.querySelector("h2"),
-};
+const listEl = document.querySelectorAll(".item");
+const allItems = listEl.forEach((value) =>
+  console.log(
+    `Категория - ${value.firstElementChild.textContent}, количество элементов -  ${value.lastElementChild.children.length}`
+  )
+);
+// console.log(value) - все элементы в listEl

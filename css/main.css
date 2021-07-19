@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-size: 14px;
   font-family: var(--main-fonts);
@@ -21,5 +22,48 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.list {
+  /* сброс отступов списков */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.link:hover,
+.link:focus {
+  color: var(--change-link-color);
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.gallery-list {
+  margin-top: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: -10px;
+  margin-top: -10px;
+  outline: 1px solid #19b326;
+}
+
+.gallery-list__item {
+  margin-left: 10px;
+  margin-top: 10px;
+  -ms-flex-preferred-size: calc((100% - 30px) / 3);
+      flex-basis: calc((100% - 30px) / 3);
+  outline: 1px solid red;
 }
 /*# sourceMappingURL=main.css.map */

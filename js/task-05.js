@@ -24,10 +24,13 @@ const outputNameEl = document.querySelector("#name-output");
 // inputNameEl.addEventListener("input", onInputValue);
 
 // 3
-function onInputValue(event) {
-  if (event.currentTarget.value === "") {
-    outputNameEl.textContent = "незнакомец";
-  } else outputNameEl.textContent = event.currentTarget.value;
-}
+// function onInputValue(event) {
+//   if (event.currentTarget.value.trim() === "") {
+//     outputNameEl.textContent = "незнакомец";
+//   } else outputNameEl.textContent = event.currentTarget.value;
+// }
 
 inputNameEl.addEventListener("input", onInputValue);
+function onInputValue(e) {
+  outputNameEl.textContent = e.currentTarget.value.trim() || "незнакомец";
+}

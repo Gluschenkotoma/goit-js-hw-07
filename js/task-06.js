@@ -1,32 +1,14 @@
-const validationInputEl = document.querySelector("#validation-input");
-console.log(validationInputEl);
+const input = document.querySelector("#validation-input");
+const inputValueLength = Number(input.getAttribute("data-length"));
 
-// validationInputEl.addEventListener("change", onChangeBorderInput);
-// 1
-// function onChangeBorderInput(event) {
-//   if (validationInputEl.hasAttribute("class")) {
-//     validationInputEl.removeAttribute("class");
-//   }
-//   if (
-//     event.currentTarget.value.length !==
-//     Number(validationInputEl.getAttribute("data-length"))
-//   ) {
-//     return validationInputEl.classList.add("invalid");
-//   }
-//   return validationInputEl.classList.add("valid");
-// }
+input.addEventListener("blur", onInputBlur);
 
-// 2
-
-function onChangeBorderInput(event) {
-  if (
-    event.currentTarget.value.length < validationInputEl.dataset.length ||
-    event.currentTarget.value.length > validationInputEl.dataset.length
-  ) {
-    validationInputEl.classList = "invalid";
-  } else validationInputEl.classList = "valid";
+function onInputBlur(event) {
+  if (event.currentTarget.value.length === inputValueLength) {
+    event.currentTarget.classList.add("valid");
+    event.currentTarget.classList.remove("invalid");
+    return;
+  }
+  event.currentTarget.classList.remove("valid");
+  event.currentTarget.classList.add("invalid");
 }
-// 6
-console.log(validationInputEl.dataset.length);
-
-validationInputEl.addEventListener("blur", onChangeBorderInput);

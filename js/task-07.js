@@ -24,6 +24,7 @@ const spanEl = document.querySelector("#text");
 // // 2
 
 function changeSizeText() {
+  console.log(inputEl.value);
   spanEl.setAttribute("style", `font-size: ${inputEl.value}px`);
 }
 
